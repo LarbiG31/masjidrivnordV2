@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masjid Riv Nord</title>
+    <meta name="description" content="Masjid Riv Nord — Mosquée de la communauté musulmane de Saint-Jérôme, QC.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="lang-switcher">
+    <button onclick="setLang('en')">EN</button>
+    <button onclick="setLang('fr')">FR</button>
+    <button onclick="setLang('ar')">AR</button>
+</div>
+
+<header class="hero">
+    <img src="logo.png" class="logo-corner" alt="Logo Masjid Riv Nord">
+    <h1 data-en="Masjid Riv Nord" data-fr="Masjid Riv Nord" data-ar="مسجد ريف نور">Masjid Riv Nord</h1>
+    <nav>
+        <a href="index.html"   data-en="Home"         data-fr="Accueil"          data-ar="الرئيسية">Accueil</a>
+        <a href="project.html" data-en="Project"       data-fr="Projet"           data-ar="المشروع">Projet</a>
+        <a href="prayer.html"  data-en="Prayer Times"  data-fr="Heures de prière" data-ar="مواقيت الصلاة">Heures de prière</a>
+        <a href="contact.html" data-en="Contact"       data-fr="Contact"          data-ar="اتصل بنا">Contact</a>
+    </nav>
+</header>
+
+<main>
+
+    <section class="welcome-section">
+        <h2 data-en="Welcome" data-fr="Bienvenue" data-ar="مرحبا بكم">Bienvenue</h2>
+        <p data-en="Masjid Riv Nord serves the Muslim community of Saint-Jérôme. Join us for prayers, events, and community activities."
+           data-fr="Masjid Riv Nord sert la communauté musulmane de Saint-Jérôme. Rejoignez-nous pour les prières, événements et activités communautaires."
+           data-ar="مسجد ريف نور يخدم الجالية المسلمة في سان جيروم. انضموا إلينا للصلاة والفعاليات والأنشطة المجتمعية.">
+            Masjid Riv Nord sert la communauté musulmane de Saint-Jérôme. Rejoignez-nous pour les prières, événements et activités communautaires.
+        </p>
+    </section>
+
+    <div class="grid">
+
+        <!-- Donation Card -->
+        <div class="card">
+            <h3 data-en="Building Fund" data-fr="Fonds de Construction" data-ar="صندوق بناء المسجد">Fonds de Construction</h3>
+            <p style="font-size:0.88rem;color:#666;margin-bottom:8px;"
+               data-en="Help us build a permanent home for our community."
+               data-fr="Aidez-nous à construire un foyer permanent pour notre communauté."
+               data-ar="ساعدونا في بناء مقر دائم لمجتمعنا.">
+               Aidez-nous à construire un foyer permanent pour notre communauté.
+            </p>
+
+            <div class="progress-wrap">
+                <div class="progress-track">
+                    <div id="progress-bar" class="progress-fill"></div>
+                </div>
+                <div class="progress-labels">
+                    <div>
+                        <span class="raised">$<span id="collected-amount">—</span></span>
+                        <span class="goal-label" style="font-size:0.78rem;display:block;"
+                              data-en="raised" data-fr="collectés" data-ar="جُمع">collectés</span>
+                    </div>
+                    <div style="text-align:right;">
+                        <span style="font-size:1rem;font-weight:700;color:#333;">$<span id="goal-amount">—</span></span>
+                        <span class="goal-label" style="font-size:0.78rem;display:block;"
+                              data-en="goal" data-fr="objectif" data-ar="الهدف">objectif</span>
+                    </div>
+                </div>
+                <div class="progress-percent" id="progress-percent"></div>
+            </div>
+
+            <div class="donate-actions">
+                <!-- PayPal donate button -->
+                <div id="donate-button-container">
+                    <div id="donate-button"></div>
+                    <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+                    <script>
+                        PayPal.Donation.Button({
+                            env: 'production',
+                            hosted_button_id: 'ZB69M8PDXEW2C',
+                            image: {
+                                src: 'https://www.paypalobjects.com/fr_CA/i/btn/btn_donateCC_LG.gif',
+                                alt: 'Bouton Faire un don avec PayPal',
+                                title: 'PayPal - The safer, easier way to pay online!',
+                            }
+                        }).render('#donate-button');
+                    </script>
+                </div>
+                <a href="project.html" class="btn btn-outline btn-full"
+                   data-en="Learn More" data-fr="En savoir plus" data-ar="تفاصيل">En savoir plus</a>
+            </div>
+        </div>
+
+        <!-- News Card -->
+        <div class="card">
+            <h3 data-en="Latest News" data-fr="Dernières Nouvelles" data-ar="آخر الأخبار">Dernières Nouvelles</h3>
+            <ul class="news-list">
+                <li class="news-item">
+                    <span class="news-date">Mars 2025</span>
+                    <span class="news-text"
+                          data-en="Ramadan 2025: Special Tarawih prayers every night at 9:30 PM. All welcome."
+                          data-fr="Ramadan 2025 : Prières Tarawih spéciales chaque soir à 21h30. Tout le monde est bienvenu."
+                          data-ar="رمضان 2025: صلاة التراويح كل ليلة الساعة 9:30 مساءً. الجميع مرحب بهم.">
+                        Ramadan 2025 : Prières Tarawih spéciales chaque soir à 21h30. Tout le monde est bienvenu.
+                    </span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">Fév. 2025</span>
+                    <span class="news-text"
+                          data-en="Fundraising milestone: We have reached 35% of our building fund goal. Thank you!"
+                          data-fr="Étape importante : Nous avons atteint 35% de notre objectif du fonds de construction. Merci !"
+                          data-ar="إنجاز في جمع التبرعات: وصلنا إلى 35% من هدف صندوق البناء. شكراً لكم!">
+                        Étape importante : Nous avons atteint 35% de notre objectif du fonds de construction. Merci !
+                    </span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">Jan. 2025</span>
+                    <span class="news-text"
+                          data-en="Friday Khutbah is held every week at 1:00 PM. New location confirmed."
+                          data-fr="Le Khutbah du vendredi a lieu chaque semaine à 13h00. Nouveau lieu confirmé."
+                          data-ar="خطبة الجمعة تُقام كل أسبوع الساعة 1:00 ظهراً. تم تأكيد الموقع الجديد.">
+                        Le Khutbah du vendredi a lieu chaque semaine à 13h00. Nouveau lieu confirmé.
+                    </span>
+                </li>
+            </ul>
+            <div class="news-img-wrap">
+                <img src="News/latest.jpg" alt="Actualités de la mosquée">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Contact Widget -->
+    <section class="contact-widget">
+        <h3 data-en="Connect With Us" data-fr="Contactez-nous" data-ar="تواصل معنا">Contactez-nous</h3>
+        <div class="widget-grid">
+            <div class="widget-item"><i class="fas fa-phone"></i> (450) 694-2206</div>
+            <div class="widget-item"><i class="fas fa-envelope"></i> masjidrivnord@gmail.com</div>
+            <div class="widget-social">
+                <a href="https://www.facebook.com/share/1AmzJvjMWP/" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://chat.whatsapp.com/I94Uq8UrA2m0HjQVRyhX6O" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

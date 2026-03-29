@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — Masjid Riv Nord</title>
+    <meta name="description" content="Contactez Masjid Riv Nord à Saint-Jérôme, QC.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="lang-switcher">
+    <button onclick="setLang('en')">EN</button>
+    <button onclick="setLang('fr')">FR</button>
+    <button onclick="setLang('ar')">AR</button>
+</div>
+
+<header class="hero">
+    <img src="logo.png" class="logo-corner" alt="Logo Masjid Riv Nord">
+    <h1 data-en="Contact Us" data-fr="Contactez-nous" data-ar="اتصل بنا">Contactez-nous</h1>
+    <nav>
+        <a href="index.html"   data-en="Home"         data-fr="Accueil"          data-ar="الرئيسية">Accueil</a>
+        <a href="project.html" data-en="Project"       data-fr="Projet"           data-ar="المشروع">Projet</a>
+        <a href="prayer.html"  data-en="Prayer Times"  data-fr="Heures de prière" data-ar="مواقيت الصلاة">Heures de prière</a>
+        <a href="contact.html" data-en="Contact"       data-fr="Contact"          data-ar="اتصل بنا">Contact</a>
+    </nav>
+</header>
+
+<main>
+
+    <div class="grid">
+
+        <!-- Info + Map -->
+        <section class="card" style="flex:2;">
+            <h2 data-en="Find Us" data-fr="Nous trouver" data-ar="موقعنا">Nous trouver</h2>
+
+            <div class="contact-info" style="margin-top:12px;">
+                <p>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>735 A Rue Labelle, Saint-Jérôme, QC J7Z 5M2</span>
+                </p>
+                <p>
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+14506942206" style="color:inherit;text-decoration:none;">(450) 694-2206</a>
+                </p>
+                <p>
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:masjidrivnord@gmail.com" style="color:inherit;text-decoration:none;">masjidrivnord@gmail.com</a>
+                </p>
+            </div>
+
+            <div class="map-wrap">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2784.1485642455845!2d-74.0049444!3d45.7782333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccf2c9183610931%3A0xe5435987f2e1b12b!2s735%20Rue%20Labelle%2C%20Saint-J%C3%A9r%C3%B4me%2C%20QC%20J7Z%205M2!5e0!3m2!1sen!2sca!4v1710520000000!5m2!1sen!2sca"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Carte Masjid Riv Nord">
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Social + Hours -->
+        <section class="card">
+            <h2 data-en="Social Media" data-fr="Médias Sociaux" data-ar="وسائل التواصل">Médias Sociaux</h2>
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/1AmzJvjMWP/" target="_blank" title="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://chat.whatsapp.com/I94Uq8UrA2m0HjQVRyhX6O" target="_blank" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+
+            <hr style="border:none;border-top:1px solid #f0f0f0;margin:24px 0;">
+
+            <h3 style="color:var(--green);margin-bottom:12px;"
+                data-en="Opening Hours" data-fr="Heures d'ouverture" data-ar="ساعات العمل">
+                Heures d'ouverture
+            </h3>
+            <table style="width:100%;font-size:0.88rem;border-collapse:collapse;">
+                <tr>
+                    <td style="padding:6px 0;color:#666;"
+                        data-en="Prayer times" data-fr="Heures de prière" data-ar="أوقات الصلاة">Heures de prière</td>
+                    <td style="text-align:right;font-weight:700;"
+                        data-en="Daily — 5 prayers" data-fr="Quotidien — 5 prières" data-ar="يوميًا — 5 صلوات">Quotidien — 5 prières</td>
+                </tr>
+                <tr>
+                    <td style="padding:6px 0;color:#666;"
+                        data-en="Friday Khutbah" data-fr="Khutbah du vendredi" data-ar="خطبة الجمعة">Khutbah du vendredi</td>
+                    <td style="text-align:right;font-weight:700;">13h00</td>
+                </tr>
+            </table>
+
+            <div style="margin-top:20px;">
+                <a href="prayer.html" class="btn btn-full"
+                   data-en="View Prayer Times" data-fr="Voir les horaires" data-ar="عرض الأوقات">
+                    Voir les horaires
+                </a>
+            </div>
+        </section>
+
+    </div>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

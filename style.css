@@ -1,0 +1,386 @@
+:root {
+    --green: #0c6b3f;
+    --green-dark: #094d2d;
+    --green-light: #e8f5ee;
+    --grey-bg: #f5f6f8;
+    --white: #ffffff;
+    --text: #1a1a1a;
+    --text-muted: #666;
+    --radius: 12px;
+    --shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--grey-bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* ── Language Switcher ── */
+.lang-switcher {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 100;
+    display: flex;
+    gap: 4px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 20px;
+    padding: 4px 8px;
+    backdrop-filter: blur(4px);
+}
+.lang-switcher button {
+    border: none;
+    background: none;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 0.78rem;
+    padding: 3px 7px;
+    border-radius: 12px;
+    transition: background 0.2s;
+}
+.lang-switcher button:hover,
+.lang-switcher button.active {
+    background: rgba(255,255,255,0.25);
+}
+
+/* ── Header ── */
+.hero {
+    background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+    color: white;
+    padding: 60px 20px 36px;
+    text-align: center;
+    position: relative;
+}
+.logo-corner {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    height: 48px;
+    width: auto;
+}
+.hero h1 {
+    font-size: 2rem;
+    margin-bottom: 18px;
+    letter-spacing: 0.5px;
+}
+nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 4px; }
+nav a {
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 20px;
+    transition: background 0.2s, color 0.2s;
+    letter-spacing: 0.5px;
+}
+nav a:hover, nav a.active {
+    background: rgba(255,255,255,0.2);
+    color: white;
+}
+
+/* ── Main Layout ── */
+main {
+    max-width: 1100px;
+    margin: 28px auto 60px;
+    padding: 0 16px;
+}
+
+/* ── Cards ── */
+.card, .welcome-section, .contact-widget {
+    background: var(--white);
+    padding: 28px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+}
+.card h2, .card h3,
+.welcome-section h2, .welcome-section h3 {
+    color: var(--green);
+    margin-bottom: 14px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+/* ── Donation Progress ── */
+.progress-wrap { margin: 18px 0 10px; }
+.progress-track {
+    background: #e8ede9;
+    border-radius: 20px;
+    height: 22px;
+    overflow: hidden;
+    position: relative;
+}
+.progress-fill {
+    background: var(--green);
+    height: 100%;
+    width: 0%;
+    border-radius: 20px;
+    transition: width 1.6s ease-in-out;
+    position: relative;
+}
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    right: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: rgba(255,255,255,0.4);
+    border-radius: 0 20px 20px 0;
+}
+.progress-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.82rem;
+    margin-top: 8px;
+    color: var(--text-muted);
+}
+.progress-labels .raised {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--green);
+}
+.progress-labels .goal-label { color: var(--text-muted); }
+.progress-percent {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+/* ── Donate Actions ── */
+.donate-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    margin-top: 22px;
+}
+
+/* ── Buttons ── */
+.btn {
+    display: inline-block;
+    background: var(--green);
+    color: white;
+    padding: 11px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.88rem;
+    text-align: center;
+    transition: background 0.2s, transform 0.1s;
+    border: none;
+    cursor: pointer;
+}
+.btn:hover { background: var(--green-dark); transform: translateY(-1px); }
+.btn-outline {
+    background: none;
+    border: 2px solid var(--green);
+    color: var(--green);
+}
+.btn-outline:hover { background: var(--green-light); transform: translateY(-1px); }
+.btn-dark { background: #444; }
+.btn-dark:hover { background: #222; }
+.btn-full { width: 100%; }
+
+/* ── News ── */
+.news-list { list-style: none; }
+.news-item {
+    display: flex;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid #f0f0f0;
+    align-items: flex-start;
+}
+.news-item:last-child { border-bottom: none; }
+.news-date {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    padding-top: 3px;
+    min-width: 70px;
+}
+.news-text { font-size: 0.9rem; line-height: 1.5; }
+.news-img-wrap {
+    text-align: center;
+    margin-top: 16px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.news-img-wrap img {
+    width: 100%;
+    max-height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* ── Prayer Times ── */
+.prayer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+}
+.prayer-card {
+    background: var(--green-light);
+    border-radius: 10px;
+    padding: 16px 10px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+.prayer-card:hover { transform: translateY(-2px); }
+.prayer-card.next-prayer {
+    background: var(--green);
+    color: white;
+}
+.prayer-name {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--green);
+    margin-bottom: 6px;
+}
+.prayer-card.next-prayer .prayer-name { color: rgba(255,255,255,0.8); }
+.prayer-time {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text);
+}
+.prayer-card.next-prayer .prayer-time { color: white; }
+.next-label {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.8);
+    margin-top: 4px;
+}
+.prayer-date-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.prayer-date {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+}
+.hijri-date {
+    font-size: 0.88rem;
+    color: var(--green);
+    font-weight: 700;
+}
+.mawaqit-wrap {
+    margin-top: 16px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* ── Project page ── */
+.project-desc {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--text);
+    white-space: pre-wrap;
+    padding: 4px 0;
+}
+.slideshow-container {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #000;
+}
+.mySlides { display: none; }
+.mySlides img { width: 100%; display: block; max-height: 420px; object-fit: cover; }
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 14px 18px;
+    color: white;
+    font-size: 1.2rem;
+    background: rgba(0,0,0,0.45);
+    border: none;
+    user-select: none;
+    transition: background 0.2s;
+    z-index: 10;
+}
+.prev { left: 0; border-radius: 0 6px 6px 0; }
+.next { right: 0; border-radius: 6px 0 0 6px; }
+.prev:hover, .next:hover { background: rgba(0,0,0,0.75); }
+.media-tabs { display: flex; gap: 10px; margin-bottom: 16px; }
+
+/* ── Contact page ── */
+.contact-info { line-height: 2.2; }
+.contact-info p { display: flex; align-items: center; gap: 10px; font-size: 0.95rem; }
+.contact-info i { color: var(--green); width: 20px; }
+.map-wrap {
+    width: 100%;
+    height: 380px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+.map-wrap iframe { width: 100%; height: 100%; border: 0; }
+.social-links { display: flex; justify-content: center; gap: 28px; margin-top: 20px; }
+.social-links a {
+    font-size: 2.2rem;
+    color: var(--green);
+    transition: color 0.2s, transform 0.2s;
+}
+.social-links a:hover { color: var(--green-dark); transform: scale(1.1); }
+
+/* ── Contact Widget on homepage ── */
+.contact-widget { text-align: center; }
+.widget-grid {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+}
+.widget-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    color: var(--green);
+    font-size: 0.9rem;
+}
+.widget-social a {
+    font-size: 1.6rem;
+    margin: 0 10px;
+    color: var(--green);
+    transition: color 0.2s;
+}
+.widget-social a:hover { color: var(--green-dark); }
+
+/* ── RTL Support ── */
+[dir="rtl"] nav a { letter-spacing: 0; }
+[dir="rtl"] .logo-corner { left: auto; right: 14px; }
+[dir="rtl"] .lang-switcher { right: auto; left: 14px; }
+[dir="rtl"] .news-item { flex-direction: row-reverse; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .hero { padding-top: 75px; padding-bottom: 28px; }
+    .hero h1 { font-size: 1.5rem; }
+    .logo-corner { height: 38px; }
+    nav a { font-size: 0.72rem; padding: 5px 10px; }
+    .card, .welcome-section { padding: 20px; }
+    .prayer-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 480px) {
+    .prayer-grid { grid-template-columns: repeat(2, 1fr); }
+    .grid { grid-template-columns: 1fr; }
+}

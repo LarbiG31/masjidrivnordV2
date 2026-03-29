@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heures de prière — Masjid Riv Nord</title>
+    <meta name="description" content="Horaires des prières quotidiennes à Masjid Riv Nord, Saint-Jérôme.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="lang-switcher">
+    <button onclick="setLang('en')">EN</button>
+    <button onclick="setLang('fr')">FR</button>
+    <button onclick="setLang('ar')">AR</button>
+</div>
+
+<header class="hero">
+    <img src="logo.png" class="logo-corner" alt="Logo Masjid Riv Nord">
+    <h1 data-en="Prayer Times" data-fr="Heures de prière" data-ar="مواقيت الصلاة">Heures de prière</h1>
+    <nav>
+        <a href="index.html"   data-en="Home"         data-fr="Accueil"          data-ar="الرئيسية">Accueil</a>
+        <a href="project.html" data-en="Project"       data-fr="Projet"           data-ar="المشروع">Projet</a>
+        <a href="prayer.html"  data-en="Prayer Times"  data-fr="Heures de prière" data-ar="مواقيت الصلاة">Heures de prière</a>
+        <a href="contact.html" data-en="Contact"       data-fr="Contact"          data-ar="اتصل بنا">Contact</a>
+    </nav>
+</header>
+
+<main>
+
+    <section class="card">
+        <div class="prayer-date-row">
+            <span class="prayer-date" id="prayer-date-gregorian">Chargement...</span>
+            <span class="hijri-date" id="prayer-date-hijri"></span>
+        </div>
+
+        <div id="prayer-times-grid" class="prayer-grid">
+            <!-- Filled by script.js via Aladhan API -->
+            <div style="grid-column:1/-1;text-align:center;padding:20px;color:#999;font-size:0.9rem;">
+                <i class="fas fa-spinner fa-spin"></i>&nbsp;
+                <span data-en="Loading prayer times..." data-fr="Chargement des horaires..." data-ar="جارٍ تحميل الأوقات...">Chargement des horaires...</span>
+            </div>
+        </div>
+
+        <p style="font-size:0.78rem;color:#999;margin-top:16px;text-align:center;"
+           data-en="Times calculated for Saint-Jérôme, QC — Muslim World League method."
+           data-fr="Horaires calculés pour Saint-Jérôme, QC — méthode de la Ligue islamique mondiale."
+           data-ar="الأوقات محسوبة لمدينة سان جيروم، كيبيك — طريقة رابطة العالم الإسلامي.">
+           Horaires calculés pour Saint-Jérôme, QC — méthode de la Ligue islamique mondiale.
+        </p>
+    </section>
+
+    <section class="card">
+        <h3 style="color:var(--green);margin-bottom:12px;"
+            data-en="Live Schedule (Mawaqit)" data-fr="Horaire en direct (Mawaqit)" data-ar="الجدول المباشر (مواقيت)">
+            Horaire en direct (Mawaqit)
+        </h3>
+        <div class="mawaqit-wrap">
+            <iframe
+                src="https://mawaqit.net/en/masjid-al-hak-saint-jerome-j7z-5m2-canada"
+                width="100%"
+                height="650"
+                frameborder="0"
+                style="border-radius:8px;"
+                loading="lazy"
+                title="Mawaqit prayer times">
+            </iframe>
+        </div>
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

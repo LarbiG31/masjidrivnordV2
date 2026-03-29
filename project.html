@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet de Bâtiment — Masjid Riv Nord</title>
+    <meta name="description" content="Notre vision pour un nouveau bâtiment permanent pour la communauté musulmane de Saint-Jérôme.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="lang-switcher">
+    <button onclick="setLang('en')">EN</button>
+    <button onclick="setLang('fr')">FR</button>
+    <button onclick="setLang('ar')">AR</button>
+</div>
+
+<header class="hero">
+    <img src="logo.png" class="logo-corner" alt="Logo Masjid Riv Nord">
+    <h1 data-en="Building Project" data-fr="Projet de Bâtiment" data-ar="مشروع بناء المسجد">Projet de Bâtiment</h1>
+    <nav>
+        <a href="index.html"   data-en="Home"         data-fr="Accueil"          data-ar="الرئيسية">Accueil</a>
+        <a href="project.html" data-en="Project"       data-fr="Projet"           data-ar="المشروع">Projet</a>
+        <a href="prayer.html"  data-en="Prayer Times"  data-fr="Heures de prière" data-ar="مواقيت الصلاة">Heures de prière</a>
+        <a href="contact.html" data-en="Contact"       data-fr="Contact"          data-ar="اتصل بنا">Contact</a>
+    </nav>
+</header>
+
+<main>
+
+    <!-- Vision -->
+    <section class="welcome-section">
+        <h2 data-en="Our Vision" data-fr="Notre Vision" data-ar="رؤيتنا">Notre Vision</h2>
+        <p id="project-description" class="project-desc">Chargement...</p>
+    </section>
+
+    <!-- Progress on project page too -->
+    <section class="card">
+        <h3 data-en="Building Fund Progress" data-fr="Avancement du Fonds" data-ar="تقدم صندوق البناء">Avancement du Fonds</h3>
+        <div class="progress-wrap">
+            <div class="progress-track">
+                <div id="progress-bar" class="progress-fill"></div>
+            </div>
+            <div class="progress-labels">
+                <div>
+                    <span class="raised">$<span id="collected-amount">—</span></span>
+                    <span class="goal-label" style="font-size:0.78rem;display:block;"
+                          data-en="raised" data-fr="collectés" data-ar="جُمع">collectés</span>
+                </div>
+                <div style="text-align:right;">
+                    <span style="font-size:1rem;font-weight:700;color:#333;">$<span id="goal-amount">—</span></span>
+                    <span class="goal-label" style="font-size:0.78rem;display:block;"
+                          data-en="goal" data-fr="objectif" data-ar="الهدف">objectif</span>
+                </div>
+            </div>
+            <div class="progress-percent" id="progress-percent"></div>
+        </div>
+        <div style="text-align:center;margin-top:18px;">
+            <div id="donate-button"></div>
+            <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+            <script>
+                PayPal.Donation.Button({
+                    env: 'production',
+                    hosted_button_id: 'ZB69M8PDXEW2C',
+                    image: {
+                        src: 'https://www.paypalobjects.com/fr_CA/i/btn/btn_donateCC_LG.gif',
+                        alt: 'Bouton Faire un don avec PayPal',
+                        title: 'PayPal - The safer, easier way to pay online!',
+                    }
+                }).render('#donate-button');
+            </script>
+        </div>
+    </section>
+
+    <!-- Photos & Video -->
+    <section class="card">
+        <div class="media-tabs">
+            <button onclick="showMedia('photo')" class="btn btn-dark"
+                    data-en="Photos" data-fr="Photos" data-ar="صور">Photos</button>
+            <button onclick="showMedia('video')" class="btn btn-dark"
+                    data-en="Video" data-fr="Vidéo" data-ar="فيديو">Vidéo</button>
+        </div>
+
+        <div id="media-photo" class="slideshow-container">
+            <div class="mySlides"><img src="Project/image1.jpg" alt="Photo du projet 1"></div>
+            <div class="mySlides"><img src="Project/image2.jpg" alt="Photo du projet 2"></div>
+            <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+            <button class="next" onclick="plusSlides(1)">&#10095;</button>
+        </div>
+
+        <div id="media-video" style="display:none;">
+            <iframe id="project-video-iframe"
+                width="100%" height="420" src=""
+                frameborder="0" allowfullscreen
+                style="border-radius:10px;"
+                title="Vidéo du projet">
+            </iframe>
+        </div>
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+<script>
+    function showMedia(type) {
+        document.getElementById('media-photo').style.display = (type === 'photo') ? 'block' : 'none';
+        document.getElementById('media-video').style.display  = (type === 'video')  ? 'block' : 'none';
+    }
+
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) { showSlides(slideIndex += n); }
+
+    function showSlides(n) {
+        const slides = document.getElementsByClassName('mySlides');
+        if (n > slides.length) slideIndex = 1;
+        if (n < 1) slideIndex = slides.length;
+        Array.from(slides).forEach(s => s.style.display = 'none');
+        slides[slideIndex - 1].style.display = 'block';
+    }
+</script>
+</body>
+</html>
